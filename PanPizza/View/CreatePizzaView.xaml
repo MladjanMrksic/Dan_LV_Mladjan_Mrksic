@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PanPizza"
         mc:Ignorable="d"
-       Title="AddIngredientsView"  Height="500" Width="800" 
-        Background="Orange" WindowStartupLocation="CenterScreen">
+       Title="PanPizza"  Height="500" Width="600" Background="Orange" WindowStartupLocation="CenterScreen">
     <Grid>
         <Border Background="#2e3137" CornerRadius="20" Margin="20">
             <Grid>
@@ -29,10 +28,12 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="6"/>
                     <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="6"/>
+                    <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Label Grid.Row="3" Grid.Column="3" Foreground="White" FontSize="18" HorizontalAlignment="Center" Content="Choose pizza size:"/>
-                <ComboBox Grid.Column="5" Grid.Row="3" Width="auto" Height="20" Name="cmbRecipeType" Text="{Binding Recipe.RecipeType, UpdateSourceTrigger=PropertyChanged}">
+                <ComboBox Grid.Column="5" Grid.Row="3" Width="auto" Height="20" Name="cmbPizzaSize" Text="{Binding PizzaSize, UpdateSourceTrigger=PropertyChanged}">
                     <ComboBoxItem>Small</ComboBoxItem>
                     <ComboBoxItem>Medium</ComboBoxItem>
                     <ComboBoxItem>Large</ComboBoxItem>
@@ -59,12 +60,11 @@
                 </StackPanel>
                 <StackPanel Grid.Column="3" Grid.Row="7" Orientation="Horizontal">
                     <Button Name="btnClose" Content="Close" Width="50" Height="30" HorizontalAlignment="Center" Margin="0,0,20,0" Command="{Binding Close, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
+                    <Button Name="btnNewOrder" Content="Reset" Width="50" Height="30" HorizontalAlignment="Center" Margin="0,0,20,0" Command="{Binding NewOrder, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
                     <Button Name="btnPrintBill" Content="Print Bill" Width="50" Height="30" HorizontalAlignment="Center" Margin="0,0,20,0" Command="{Binding PrintBill, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"/>
                 </StackPanel>
-                <StackPanel Grid.Column="5" Grid.Row="7" Orientation="Horizontal">
-                    <Label Foreground="White" FontSize="18" HorizontalAlignment="Left" Content="Total:"/>
-                    <Label Foreground="White" FontSize="18" HorizontalAlignment="Right"/>
-                </StackPanel>
+                <Label Grid.Column="5" Grid.Row="7" Foreground="White" FontSize="18" HorizontalAlignment="Right" Content="Total:"/>
+                <Label Grid.Column="7" Grid.Row="7" Name="lblTotal" Foreground="White" FontSize="18" HorizontalAlignment="Left" Content="{Binding Total, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
         </Border>
     </Grid>
