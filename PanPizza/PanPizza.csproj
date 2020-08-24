@@ -63,7 +63,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="ViewModel\CreatePizzaViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="View\CreatePizzaView.xaml.cs">
       <DependentUpon>CreatePizzaView.xaml</DependentUpon>
       <SubType>Code</SubType>

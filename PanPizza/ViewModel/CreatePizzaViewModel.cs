@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace PanPizza.ViewModel
 {
-    class CreatePizzaViewModel
+    class CreatePizzaViewModel : ViewModelBase
     {
+        CreatePizzaView view;
+
+        public CreatePizzaViewModel (CreatePizzaView cpv)
+        {
+            view = cpv;
+        }
+
+
     }
 }
